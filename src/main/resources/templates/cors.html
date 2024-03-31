@@ -10,7 +10,10 @@
 
     $.ajax({
         url:'http://localhost:8080/api/health',
-        method:'GET',
+        type:'GET',
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader('custom-header', 'custom value');
+        },
         success: function (res) {
             console.log(res);
         },
