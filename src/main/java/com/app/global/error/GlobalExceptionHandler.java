@@ -1,5 +1,6 @@
 package com.app.global.error;
 
+import com.app.global.error.exception.AuthenticationException;
 import com.app.global.error.exception.BusinessException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -45,9 +46,18 @@ public class GlobalExceptionHandler {
     /**
      * 비지니스 로직 실행 중 오류 발생
      */
-    @ExceptionHandler(value = {BusinessException.class})
+    @ExceptionHandler(value = BusinessException.class)
     protected ResponseEntity<ErrorResponse> handleConflict(BusinessException e) {
         log.error("BusinessException", e);
+        ErrorResponse errorResponse = ErrorResponse.of(e.getErrorCode().getErrorCode(), e.getMessage());
+        return ResponseEntity.status(e.getErrorCode().getHttpStatus()).body(errorResponse);
+    }
+    /**
+     * 인증 관련 로직 실행 중 오류 발생
+     */
+    @ExceptionHandler(value = AuthenticationException.class)
+    protected ResponseEntity<ErrorResponse> handleAuthenticationException(AuthenticationException e) {
+        log.error("AuthenticationException", e);
         ErrorResponse errorResponse = ErrorResponse.of(e.getErrorCode().getErrorCode(), e.getMessage());
         return ResponseEntity.status(e.getErrorCode().getHttpStatus()).body(errorResponse);
     }

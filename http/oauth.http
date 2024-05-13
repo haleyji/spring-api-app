@@ -1,0 +1,8 @@
+###Oauth 검증
+POST http://localhost:8080/api/oauth/login
+Authorization: Bearer dfajdfkjdslkfjdslfkds
+Content-Type: application/json
+
+{
+  "memberType": "KAKAO"
+}
