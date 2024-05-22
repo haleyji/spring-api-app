@@ -3,6 +3,8 @@ package com.app.domain.member.entity;
 import com.app.domain.common.BaseEntity;
 import com.app.domain.member.constant.MemberType;
 import com.app.domain.member.constant.Role;
+import com.app.global.jwt.dto.JwtTokenDto;
+import com.app.global.util.DateTimeUtil;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -43,7 +45,7 @@ public class Member extends BaseEntity {
     @Column(length = 250)
     private String refreshToken;
 
-    private LocalDateTime refreshTokenExpirationTime;
+    private LocalDateTime tokenExpirationTime;
 
     @Builder
     public Member(String name, String email, String password, String profile,
@@ -55,6 +57,11 @@ public class Member extends BaseEntity {
         this.profile = profile;
         this.role = role;
         this.memberType = memberType;
+    }
+
+    public void updateRefreshToken(JwtTokenDto jwtTokenDto) {
+        this.refreshToken = jwtTokenDto.getRefreshToken();
+        this.tokenExpirationTime = DateTimeUtil.convertToLocalDateTime(jwtTokenDto.getRefreshTokenExpireTime());
     }
 }
 

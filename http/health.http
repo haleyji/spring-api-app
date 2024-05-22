@@ -1,6 +1,6 @@
 ###Health Check
-GET {{url}}/api/health
+GET {{url_8080}}/api/health
 
 
 ###Health Check Through Feign Client
-GET {{url}}/api/health/feign-test
+GET {{url_8082}}/api/health/feign-test

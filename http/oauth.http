@@ -1,6 +1,6 @@
 ###Oauth 검증
-POST http://localhost:8080/api/oauth/login
-Authorization: Bearer dfajdfkjdslkfjdslfkds
+POST {{url_8080}}/api/oauth/login
+Authorization: Bearer jRRx3eZFLlUTUIbGRtKfJGd44XWgUYZdAAAAAQopyNkAAAGPoL0Ai3LErHmNOyL0
 Content-Type: application/json
 
 {

@@ -7,9 +7,9 @@ import org.springframework.data.domain.AuditorAware;
 import org.springframework.util.StringUtils;
 
 import java.util.Optional;
-@RequiredArgsConstructor
 public class AuditorAwareImpl implements AuditorAware<String> {
 
+    @Autowired
     private HttpServletRequest httpServletRequest;
 
     @Override

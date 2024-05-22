@@ -1,5 +1,5 @@
 ### create JWT token
-GET http://localhost:8080/api/token-test/create
+GET {{url_8080}}/api/token-test/create
 
 ### check validation JWT token
-GET http://localhost:8080/api/token-test/valid?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBQ0NFU1MiLCJpYXQiOjE3MTM3MDgxNTksImV4cCI6MTcxMzcwOTA1OSwibWVtYmVkjhkjhlkjySWQiOjEsInJvbGUiOiJBRE1JTiJ9.n7LuRix3G-DP_sPqm5WWdr9deRLuVcDfyN9TMr-tWjZ41UA123I0oVrnaV_EdkrbqBlKe0G1peIiGqX1exx5YA
+GET {{url_8080}}/api/token-test/valid?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBQ0NFU1MiLCJpYXQiOjE3MTM3MDgxNTksImV4cCI6MTcxMzcwOTA1OSwibWVtYmVkjhkjhlkjySWQiOjEsInJvbGUiOiJBRE1JTiJ9.n7LuRix3G-DP_sPqm5WWdr9deRLuVcDfyN9TMr-tWjZ41UA123I0oVrnaV_EdkrbqBlKe0G1peIiGqX1exx5YA

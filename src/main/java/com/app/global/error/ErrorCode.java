@@ -15,7 +15,8 @@ public enum ErrorCode {
     NOT_VALID_BEARER_GRANT_TYPE(HttpStatus.UNAUTHORIZED, "A-004", "Grant Type Is Not Bearer Type"),
 
     //Member
-    INVALID_MEMBER_TYPE(HttpStatus.BAD_REQUEST, "M-001", "Invalid Member Type");
+    INVALID_MEMBER_TYPE(HttpStatus.BAD_REQUEST, "M-001", "Invalid Member Type"),
+    ALREADY_REGISTERED_MEMBER(HttpStatus.BAD_REQUEST, "M-002", "Already Registered Member"),;
 
     private HttpStatus httpStatus;
     private String errorCode;
