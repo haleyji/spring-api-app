@@ -1,0 +1,4 @@
+###멤버 조
+GET {{url_8080}}/api/member/info
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBQ0NFU1MiLCJpYXQiOjE3MTY0ODA5NDksImV4cCI6MTcxNjQ4MTg0OSwibWVtYmVySWQiOjEsInJvbGUiOiJBRE1JTiJ9.ULdLBiGyEV6tgCJpBrokIiRqDUz1xBrjlYH3UbwxL5CbWY9f94n5VvK8TctGlGdnnpOiEUnDaFGD1xc6XQVdTQ
+Content-Type: application/json

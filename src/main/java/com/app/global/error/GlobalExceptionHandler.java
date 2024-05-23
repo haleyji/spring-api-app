@@ -8,9 +8,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 @Slf4j
+@RestControllerAdvice
 public class GlobalExceptionHandler {
 
     /**
@@ -66,7 +68,7 @@ public class GlobalExceptionHandler {
      * 나머지 예외 발생
      */
     @ExceptionHandler(Exception.class)
-    protected ResponseEntity<ErrorResponse> handleException(BusinessException e) {
+    protected ResponseEntity<ErrorResponse> handleException(Exception e) {
         log.error("Exception", e);
         ErrorResponse errorResponse = ErrorResponse.of(HttpStatus.INTERNAL_SERVER_ERROR.toString(), e.getMessage());
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);

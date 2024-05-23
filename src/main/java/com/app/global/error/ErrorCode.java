@@ -13,10 +13,17 @@ public enum ErrorCode {
 
     NOT_EXISTS_AUTHORIZATION(HttpStatus.UNAUTHORIZED, "A-003", "Authorization Header Is Empty"),
     NOT_VALID_BEARER_GRANT_TYPE(HttpStatus.UNAUTHORIZED, "A-004", "Grant Type Is Not Bearer Type"),
+    REFRESH_TOKEN_NOT_FOUND(HttpStatus.UNAUTHORIZED, "A-005", "Refresh Token Not Exist"),
+    REFRESH_TOKEN_EXPIRED(HttpStatus.UNAUTHORIZED, "A-006", "Refresh Token Is Expired"),
+    NOT_ACCESS_TOKEN_TYPE(HttpStatus.UNAUTHORIZED, "A-007", "Not A Access Token Type"),
 
-    //Member
+
+
+    //Member,
     INVALID_MEMBER_TYPE(HttpStatus.BAD_REQUEST, "M-001", "Invalid Member Type"),
-    ALREADY_REGISTERED_MEMBER(HttpStatus.BAD_REQUEST, "M-002", "Already Registered Member"),;
+    ALREADY_REGISTERED_MEMBER(HttpStatus.BAD_REQUEST, "M-002", "Already Registered Member"),
+    MEMBER_NOT_EXISTS(HttpStatus.BAD_REQUEST, "M-003", "Member Not Exists"),
+    ;
 
     private HttpStatus httpStatus;
     private String errorCode;

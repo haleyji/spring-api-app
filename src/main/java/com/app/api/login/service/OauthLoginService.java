@@ -25,6 +25,7 @@ import java.util.Optional;
 public class OauthLoginService {
     private final MemberService memberService;
     private final TokenManager tokenManager;
+
     public OauthLoginDto.Response oauthLogin(String accessToken, MemberType memberType) {
         SocialLoginAPIService socialLoginApiService = SocialLoginApiServiceFactory.getSocialLoginApiService(memberType);
         OauthAttributes userInfo = socialLoginApiService.getUserInfo(accessToken);
@@ -32,7 +33,12 @@ public class OauthLoginService {
 
         //회원정보 없으면 신규 가입
         Optional<Member> optionalMember = memberService.findMemberByEmail(userInfo.getEmail());
-        Member member = optionalMember.orElse(memberService.register(userInfo.toMemberEntity(memberType, Role.ADMIN)));
+        Member member;
+        if (optionalMember.isEmpty()) {
+            member = memberService.register(userInfo.toMemberEntity(memberType, Role.ADMIN));
+        } else {
+            member = optionalMember.get();
+        }
 
         //토큰 생성
         JwtTokenDto jwtTokenDto = tokenManager.createJwtTokenDto(member.getMemberId(), member.getRole());

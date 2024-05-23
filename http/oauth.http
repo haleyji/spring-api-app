@@ -1,8 +1,13 @@
 ###Oauth 검증
 POST {{url_8080}}/api/oauth/login
-Authorization: Bearer jRRx3eZFLlUTUIbGRtKfJGd44XWgUYZdAAAAAQopyNkAAAGPoL0Ai3LErHmNOyL0
+Authorization: Bearer GjqaFJjJjXc_f5mV0HgCqhOP5w42mHkuAAAAAQoqJZEAAAGPpcw0JHLErHmNOyL0
 Content-Type: application/json
 
 {
   "memberType": "KAKAO"
 }
+
+###Oauth 검증
+POST {{url_8080}}/api/access-token/issue
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJSRUZSRVNIIiwiaWF0IjoxNzE2NDczNTk3LCJleHAiOjE3MTc2ODMxOTcsIm1lbWJlcklkIjoxfQ.sQL6sEe26-gsVQXQfLT20KT-3DgWdaD2xugK5Auqj1NZAZ2AhtsdGOhwbZudEe9gt8ZYH56NTLh5ACqY5gMTbg
+Content-Type: application/json
