@@ -41,10 +41,7 @@ public class MemberInfoController {
             @MemberInfo MemberInfoDto memberInfoDto
     ) {
         MemberInfoResponseDto memberInfo = memberInfoService.getMemberInfo(memberInfoDto);
-        if (memberInfo != null) {
-            return ResponseEntity.ok(memberInfo);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+        return ResponseEntity.ok(memberInfo);
+
     }
 }

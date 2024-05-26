@@ -2,12 +2,13 @@ package com.app.api.member.dto;
 
 import com.app.domain.member.constant.Role;
 import com.app.domain.member.entity.Member;
+import com.app.global.dto.BaseResponseDto;
 import lombok.Builder;
 import lombok.Getter;
 
 @Getter
 @Builder(toBuilder = true)
-public class MemberInfoResponseDto {
+public class MemberInfoResponseDto extends BaseResponseDto {
     private Long memberId;
     private String email;
     private String memberName;
