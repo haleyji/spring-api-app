@@ -5,8 +5,9 @@ import lombok.Builder;
 import lombok.Getter;
 
 @Getter
-@Builder
+@Builder(toBuilder = true)
 public class MemberInfoDto {
     private Long memberId;
+    private String memberName;
     private Role role;
 }

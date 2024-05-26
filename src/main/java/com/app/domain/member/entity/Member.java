@@ -4,6 +4,7 @@ import com.app.domain.common.BaseEntity;
 import com.app.domain.member.constant.MemberType;
 import com.app.domain.member.constant.Role;
 import com.app.global.jwt.dto.JwtTokenDto;
+import com.app.global.util.DBEncryptionConverter;
 import com.app.global.util.DateTimeUtil;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -27,6 +28,7 @@ public class Member extends BaseEntity {
     private MemberType memberType;
 
     @Column(unique = true, length = 50, nullable = false)
+    @Convert(converter = DBEncryptionConverter.class)
     private String email;
 
     @Column(length = 200)
